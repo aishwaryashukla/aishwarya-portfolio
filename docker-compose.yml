@@ -7,5 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: aishwarya-portfolio
     restart: unless-stopped
+    env_file:
+      - .env.local # <-- Add this line
     ports:
       - "8100:3000"
