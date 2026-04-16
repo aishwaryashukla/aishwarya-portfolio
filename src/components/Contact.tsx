@@ -31,7 +31,7 @@ export default function Contact() {
                 <h2 style={{ fontSize: '1.5rem', color: 'var(--primary)', marginBottom: '1rem', letterSpacing: '0.2em' }}>GET IN TOUCH</h2>
                 <h3 style={{ fontSize: 'clamp(3rem, 10vw, 6rem)', lineHeight: 1, marginBottom: '5rem' }}>LET'S <span className="outline-text">CONNECT</span></h3>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'minmax(300px, 1fr) 1fr', gap: '4rem', alignItems: 'center' }}>
+                <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: 'minmax(300px, 1fr) 1fr', gap: '4rem', alignItems: 'center' }}>
                     <div style={{ position: 'relative', height: '100%', minHeight: '400px', borderRadius: '24px', overflow: 'hidden', border: '1px solid var(--glass-border)' }}>
                         <div className="card-glow" style={{ opacity: 1 }}></div>
                         <img src="/DSCF8700.jpg" alt="Aishwarya Contact" style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', mixBlendMode: 'luminosity', opacity: 0.8 }} />

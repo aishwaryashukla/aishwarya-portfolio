@@ -7,7 +7,7 @@ export default function Header() {
                 <Link href="/" className="logo">
                     AISHWARYASHUKLA<span style={{ color: "var(--primary)" }}>.INFO</span>
                 </Link>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+                <div className="header-nav-wrapper" style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
                     <div className="available-badge">
                         <div className="pulse"></div>
                         STRATEGIC AI LEADERSHIP

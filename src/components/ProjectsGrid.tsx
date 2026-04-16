@@ -4,44 +4,38 @@ export default function ProjectsGrid() {
     const projects = [
         {
             title: "OFFICEGOOGLE",
-            description: "A comprehensive digital solution with integrated management features.",
+            description: "Solving enterprise efficiency through a unified digital ecosystem that streamlines operations and management workflows.",
             link: "http://officegoogle.com",
-            tech: ["Python", "Django", "React"],
             bentoClass: "bento-large"
         },
         {
             title: "SENSEISAM",
-            description: "Educational platform designed for structured learning and growth.",
+            description: "Bridging the gap in structured learning with a platform designed to solve retention and growth challenges for education businesses.",
             link: "http://Senseisam.com",
-            tech: ["Python", "React", "EdTech"],
             bentoClass: "bento-medium"
         },
         {
             title: "MYWEALTHWATCH",
-            description: "Financial tracking and portfolio management dashboard.",
+            description: "Solving financial transparency issues for high-net-worth portfolios with a data-driven tracking and analytics infrastructure.",
             link: "http://mywealthwatch.com",
-            tech: ["Django", "React", "Finance"],
             bentoClass: "bento-medium"
         },
         {
             title: "PATH SOLUTION DIAGNOSTICS",
-            description: "Diagnostic services platform delivering critical healthcare solutions.",
+            description: "Enhancing healthcare delivery by solving critical connectivity and data management challenges for diagnostic services.",
             link: "https://pathsolutiondiagnostics.com/",
-            tech: ["Web Technologies", "Healthcare"],
             bentoClass: "bento-small"
         },
         {
             title: "HINDU ASSOCIATION HK",
-            description: "Community and cultural association portal for Hong Kong members.",
+            description: "Optimizing community engagement and operational transparency for a major non-profit cultural organization.",
             link: "https://www.hinduassociationhk.com/",
-            tech: ["Web Development", "Community"],
             bentoClass: "bento-small"
         },
         {
             title: "OFFINEX (iOS APP)",
-            description: "Mobile application for continuous offline connectivity and utility.",
+            description: "Addressing the digital divide with a connectivity-first utility that ensures business-critical operations continue offline.",
             link: "https://apps.apple.com/hk/app/offinex/id6760941493?l=en-GB",
-            tech: ["iOS", "Swift", "Mobile"],
             bentoClass: "bento-wide"
         }
     ];

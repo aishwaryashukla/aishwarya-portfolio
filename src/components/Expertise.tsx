@@ -1,24 +1,24 @@
 const Expertise = () => {
     const skills = [
         {
-            title: "Big Data & AI Development",
-            description: "Led AI-driven transformation efforts, including RAG models using LLMs for secure document intelligence.",
-            highlight: "AI/ML Innovation"
+            title: "Client Experience & Consulting",
+            description: "Enhanced overall client working experience through data-driven approaches, focusing on fast case resolution, transparency, and consulting on optimal business solutions.",
+            highlight: "Strategic Partnership"
         },
         {
-            title: "Data Engineering & Pipeline Solutions",
-            description: "Designed core data pipelines, ingestion architectures, and advanced analytics frameworks that improved data transparency globally.",
-            highlight: "Core Systems"
+            title: "Business Problem Orchestration",
+            description: "Solved complex enterprise challenges by bridging the gap between business needs and high-end technical architectures, delivering prototypes that validate business value.",
+            highlight: "Problem Solver"
         },
         {
-            title: "Global Team Management",
-            description: "Directed APAC-level data engineering and automation functions, overseeing teams for IT support and complex application engineering.",
-            highlight: "Cross-Functional Leadership"
+            title: "Investment Analytics Strategy",
+            description: "Consulted for Portfolio Managers to quantify equity research analysts, providing data-driven frameworks to measure performance and research value.",
+            highlight: "Financial Intelligence"
         },
         {
-            title: "DevOps & CI/CD",
-            description: "Established an efficient DevOps model implementing Azure-based CI/CD pipelines to ensure application scalability and security.",
-            highlight: "Cloud Infrastructure"
+            title: "Global Leadership & Operations",
+            description: "Directed APAC-level data engineering and automation functions, overseeing cross-functional teams to drive digital transformation and IT excellence.",
+            highlight: "Executive Management"
         }
     ]
 
