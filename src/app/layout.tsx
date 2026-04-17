@@ -13,8 +13,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Aishwarya Shukla | Full-Stack Developer",
-  description: "Portfolio of Aishwarya Shukla, Full-Stack Developer specializing in Python, Django, and ReactJS.",
+  title: "Aishwarya Shukla | Senior Technology & Business Leader",
+  description: "Portfolio of Aishwarya Shukla, specializing in bridging complex software architecture with strategic business operations and financial technology solutions.",
 };
 
 export default function RootLayout({
