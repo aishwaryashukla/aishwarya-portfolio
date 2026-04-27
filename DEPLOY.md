@@ -23,6 +23,7 @@ Ensure it contains:
 
 ```text
 BREVO_API_KEY=xkeysib-d727cce...
+NEXT_PUBLIC_GA_ID=G-CZN1CPEHPH
 ```
 
 ### 3. Build and Deploy with Docker Compose
