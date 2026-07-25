@@ -11,3 +11,5 @@ services:
       - .env.local # <-- Add this line
     ports:
       - "8100:3000"
+    volumes:
+      - ./public:/app/public

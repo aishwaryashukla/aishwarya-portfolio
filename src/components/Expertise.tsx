@@ -2,22 +2,22 @@ const Expertise = () => {
     const skills = [
         {
             title: "Client Experience & Consulting",
-            description: "Enhanced overall client working experience through data-driven approaches, focusing on fast case resolution, transparency, and consulting on optimal business solutions.",
+            description: "Enhanced overall client working experience through data-driven approaches, driving rapid resolution workflows that improved executive decision turnaround and transparency across strategic partnerships.",
             highlight: "Strategic Partnership"
         },
         {
             title: "Business Problem Orchestration",
-            description: "Solved complex enterprise challenges by bridging the gap between business needs and high-end technical architectures, delivering prototypes that validate business value.",
+            description: "Solved complex enterprise challenges by bridging the gap between business needs and high-end technical architectures, architecting enterprise-grade prototypes that validate ROI before full-scale deployment.",
             highlight: "Problem Solver"
         },
         {
             title: "Investment Analytics Strategy",
-            description: "Consulted for Portfolio Managers to quantify equity research analysts, providing data-driven frameworks to measure performance and research value.",
+            description: "Delivering institutional-grade data frameworks for portfolio managers to evaluate research alpha, providing quantitative models to measure analyst performance and research value at scale.",
             highlight: "Financial Intelligence"
         },
         {
             title: "Global Leadership & Operations",
-            description: "Directed APAC-level data engineering and automation functions, overseeing cross-functional teams to drive digital transformation and IT excellence.",
+            description: "Leading multi-market APAC engineering teams to modernize core automation and data infrastructure, overseeing cross-functional teams to drive digital transformation and IT excellence.",
             highlight: "Executive Management"
         }
     ]

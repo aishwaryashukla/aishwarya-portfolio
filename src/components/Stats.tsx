@@ -1,6 +1,6 @@
 export default function Stats() {
     const stats = [
-        { value: "14+", label: "YEARS EXP" },
+        { value: "20+", label: "YEARS EXP" },
         { value: "VP", label: "LEADERSHIP" },
         { value: "GLOBAL", label: "SCALE ANALYTICS" },
         { value: "AI", label: "AGENTIC FOCUS" },
