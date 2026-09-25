@@ -1,0 +1,30 @@
+.toggle {
+  position: relative;
+  overflow: hidden;
+}
+
+.sun,
+.moon {
+  transition:
+    transform 0.5s var(--ease-spring),
+    opacity 0.3s ease;
+}
+
+/* Light theme shows the moon (switch to dark); dark theme shows the sun. */
+.sun {
+  position: absolute;
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.6);
+}
+
+:global([data-theme="dark"]) .sun {
+  position: static;
+  opacity: 1;
+  transform: none;
+}
+
+:global([data-theme="dark"]) .moon {
+  position: absolute;
+  opacity: 0;
+  transform: rotate(90deg) scale(0.6);
+}

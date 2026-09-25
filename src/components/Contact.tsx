@@ -1,67 +1,66 @@
-import { useState } from 'react';
+import ContactForm from "@/components/ContactForm";
+import { ArrowUpRight, Download, LinkedIn } from "@/components/Icons";
+import LocalTime from "@/components/LocalTime";
+import { site } from "@/content/site";
+import styles from "./Contact.module.css";
 
 export default function Contact() {
-    const [status, setStatus] = useState<'' | 'loading' | 'success' | 'error'>('');
-    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  return (
+    <section id="contact" className={`section ${styles.section}`} aria-labelledby="contact-title">
+      <div className="container">
+        <div className={styles.card} data-reveal>
+          <div className={styles.intro}>
+            <p className={`label ${styles.kicker}`}>
+              <span>05</span> Contact
+            </p>
+            <h2 id="contact-title" className={`display ${styles.title}`}>
+              Have a role or a project in mind? <em>Let&apos;s talk.</em>
+            </h2>
+            <p className={styles.lead}>
+              Tell me a little about what you&apos;re working on: a senior role, a product idea, or a data or AI
+              challenge.
+            </p>
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setStatus('loading');
+            <ul className={styles.direct}>
+              <li>
+                <a href={site.linkedin} target="_blank" rel="noreferrer">
+                  <span className={styles.directIcon}>
+                    <LinkedIn />
+                  </span>
+                  <span>
+                    <span className={styles.directLabel}>LinkedIn</span>
+                    <span className={styles.directValue}>in/aishwaryashukla</span>
+                  </span>
+                  <ArrowUpRight className={styles.directArrow} />
+                </a>
+              </li>
+              {site.resume && (
+                <li>
+                  <a href={site.resume} download>
+                    <span className={styles.directIcon}>
+                      <Download />
+                    </span>
+                    <span>
+                      <span className={styles.directLabel}>Résumé</span>
+                      <span className={styles.directValue}>PDF download</span>
+                    </span>
+                    <ArrowUpRight className={styles.directArrow} />
+                  </a>
+                </li>
+              )}
+            </ul>
 
-        try {
-            const res = await fetch('/api/contact', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
-            });
-            if (res.ok) {
-                setStatus('success');
-                setFormData({ name: '', email: '', message: '' });
-            } else {
-                setStatus('error');
-            }
-        } catch (error) {
-            setStatus('error');
-        }
-    };
+            <p className={styles.where}>
+              <span className={styles.whereDot} aria-hidden="true" />
+              Based in {site.location} · <LocalTime /> · working with teams worldwide
+            </p>
+          </div>
 
-    return (
-        <section className="section" id="contact" style={{ paddingBottom: '10rem' }}>
-            <div className="reveal">
-                <h2 style={{ fontSize: '1.5rem', color: 'var(--primary)', marginBottom: '1rem', letterSpacing: '0.2em' }}>GET IN TOUCH</h2>
-                <h3 style={{ fontSize: 'clamp(3rem, 10vw, 6rem)', lineHeight: 1, marginBottom: '5rem' }}>LET'S <span className="outline-text">CONNECT</span></h3>
-
-                <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: 'minmax(300px, 1fr) 1fr', gap: '4rem', alignItems: 'center' }}>
-                    <div style={{ position: 'relative', height: '100%', minHeight: '400px', borderRadius: '24px', overflow: 'hidden', border: '1px solid var(--glass-border)' }}>
-                        <div className="card-glow" style={{ opacity: 1 }}></div>
-                        <img src="/DSCF8700.jpg" alt="Aishwarya Contact" style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', mixBlendMode: 'luminosity', opacity: 0.8 }} />
-                    </div>
-
-                    <div className="project-card-pro" style={{ padding: '3rem' }}>
-                        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                            <div>
-                                <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--muted)', fontSize: '0.9rem', letterSpacing: '0.1em' }}>NAME</label>
-                                <input required type="text" value={formData.name} onChange={e => setFormData({ ...formData, name: e.target.value })} style={{ width: '100%', padding: '1rem', background: 'rgba(255,255,255,0.03)', border: '1px solid var(--glass-border)', borderRadius: '12px', color: 'white', fontSize: '1.1rem' }} />
-                            </div>
-                            <div>
-                                <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--muted)', fontSize: '0.9rem', letterSpacing: '0.1em' }}>EMAIL</label>
-                                <input required type="email" value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })} style={{ width: '100%', padding: '1rem', background: 'rgba(255,255,255,0.03)', border: '1px solid var(--glass-border)', borderRadius: '12px', color: 'white', fontSize: '1.1rem' }} />
-                            </div>
-                            <div>
-                                <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--muted)', fontSize: '0.9rem', letterSpacing: '0.1em' }}>MESSAGE</label>
-                                <textarea required rows={4} value={formData.message} onChange={e => setFormData({ ...formData, message: e.target.value })} style={{ width: '100%', padding: '1rem', background: 'rgba(255,255,255,0.03)', border: '1px solid var(--glass-border)', borderRadius: '12px', color: 'white', fontSize: '1.1rem', resize: 'vertical' }}></textarea>
-                            </div>
-
-                            <button disabled={status === 'loading'} type="submit" style={{ padding: '1.2rem', background: 'var(--primary)', color: 'white', border: 'none', borderRadius: '12px', fontSize: '1.1rem', fontWeight: 700, cursor: 'pointer', transition: 'all 0.3s' }}>
-                                {status === 'loading' ? 'SENDING...' : 'SEND MESSAGE'}
-                            </button>
-
-                            {status === 'success' && <p style={{ color: '#4ade80', textAlign: 'center', marginTop: '1rem' }}>Message sent successfully!</p>}
-                            {status === 'error' && <p style={{ color: '#f87171', textAlign: 'center', marginTop: '1rem' }}>Failed to send message. Please try again.</p>}
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+          <div className={styles.formWrap}>
+            <ContactForm />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

@@ -1,0 +1,101 @@
+.footer {
+  padding-block: clamp(40px, 5vw, 64px) 32px;
+  border-top: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.wordmark {
+  font-size: clamp(3.25rem, 0.5rem + 11vw, 11.5rem);
+  line-height: 0.85;
+  letter-spacing: -0.045em;
+  white-space: nowrap;
+  color: var(--ink);
+}
+
+.backToTop {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+  margin-bottom: 1.2em;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.backToTop:hover {
+  color: var(--ink);
+}
+
+.backToTop svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s var(--ease-out);
+}
+
+.backToTop:hover svg {
+  transform: translateY(-3px);
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 32px;
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s ease;
+}
+
+.links a:hover {
+  color: var(--ink);
+}
+
+.links svg {
+  width: 13px;
+  height: 13px;
+}
+
+.time {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 720px) {
+  .top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .backToTop {
+    margin-bottom: 0;
+  }
+
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

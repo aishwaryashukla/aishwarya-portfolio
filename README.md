@@ -1,37 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# aishwaryashukla.info
 
-## Getting Started
+Personal portfolio of Aishwarya Shukla, a technology and AI leader in Hong Kong. It is built for two audiences: recruiters (experience, credentials, résumé) and prospective clients (live product work, services, contact).
 
-First, run the development server:
+Built with Next.js 16 (App Router), React 19 and CSS Modules, with no UI framework and no runtime dependencies beyond Next.
+
+## Editing the site
+
+Almost everything lives in **`src/content/site.ts`**:
+
+| What | Where in `site.ts` |
+| --- | --- |
+| Name, headline, availability line, LinkedIn | `site`, `hero` |
+| Headline numbers (15+, 40%, 3×, 6) | `highlights` |
+| Featured case studies and client websites | `featuredProjects`, `moreProjects` |
+| Career timeline | `experience` |
+| Awards, education, certification | `credentials` |
+| Services and engagement steps | `services`, `engagementSteps` |
+| About text, facts and toolkit | `about` |
+
+Other things you may want to change:
+
+- **Screenshots**: `src/assets/work/`. Replace a file with the same name, keeping a 16:10 image about 1920×1200.
+- **Portrait**: `src/assets/portrait.jpg` (4:5).
+- **Résumé**: `public/Aishwarya-Shukla-Resume.pdf`. Set `site.resume` to `null` to hide every résumé button.
+- **Contact form topics**: `src/content/contact.ts`.
+- **Colours, type and spacing**: the tokens at the top of `src/app/globals.css`, with a light and a dark theme.
+- **Social share image and icons**: `src/app/opengraph-image.png`, `twitter-image.png`, `icon.png`, `apple-icon.png` and `favicon.ico`.
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run lint
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Environment variables
 
-## Learn More
+Copy `.env.example` to `.env.local`:
 
-To learn more about Next.js, take a look at the following resources:
+- `BREVO_API_KEY` sends contact form messages through Brevo (`src/app/api/contact/route.ts`).
+- `NEXT_PUBLIC_GA_ID` sets the Google Analytics measurement ID. It is optional and read at build time.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# aishwarya-portfolio
+The site builds as a standalone Docker image. See [DEPLOY.md](DEPLOY.md).

@@ -10,6 +10,6 @@ services:
     env_file:
       - .env.local # <-- Add this line
     ports:
-      - "8100:3000"
+      - "${DOCKER_PORT:-8100}:3000"
     volumes:
       - ./public:/app/public

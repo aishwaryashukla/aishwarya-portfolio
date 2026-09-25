@@ -1,0 +1,225 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  height: var(--header-h);
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    backdrop-filter 0.35s ease;
+}
+
+.scrolled {
+  background: color-mix(in srgb, var(--paper) 80%, transparent);
+  border-bottom-color: var(--line);
+  -webkit-backdrop-filter: saturate(1.4) blur(16px);
+  backdrop-filter: saturate(1.4) blur(16px);
+}
+
+.open {
+  background: var(--paper);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  height: 100%;
+}
+
+/* Brand ------------------------------------------------------------------ */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.mark {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex: none;
+  border-radius: 11px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  transition:
+    background-color 0.3s ease,
+    transform 0.4s var(--ease-spring);
+}
+
+.brand:hover .mark {
+  background: var(--accent);
+  color: var(--on-accent);
+  transform: rotate(-6deg);
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.brandName {
+  white-space: nowrap;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.brandRole {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+/* Desktop navigation ------------------------------------------------------ */
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 60%, transparent);
+}
+
+.navLink {
+  position: relative;
+  display: block;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted);
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--ink);
+}
+
+.navLink[aria-current="true"] {
+  color: var(--ink);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Actions ------------------------------------------------------------------ */
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.iconButton {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.iconButton:hover {
+  background: var(--surface);
+  border-color: var(--line-strong);
+}
+
+.iconButton svg {
+  width: 18px;
+  height: 18px;
+}
+
+.menuButton {
+  display: none;
+}
+
+/* Mobile menu ---------------------------------------------------------------- */
+
+.mobileMenu {
+  position: fixed;
+  inset: var(--header-h) 0 0;
+  z-index: 49;
+  overflow-y: auto;
+  padding-block: 12px 40px;
+  background: var(--paper);
+}
+
+.mobileMenu[hidden] {
+  display: none;
+}
+
+.mobileList li {
+  border-bottom: 1px solid var(--line);
+  animation: rise 0.6s var(--ease-out) both;
+  animation-delay: calc(var(--i) * 50ms);
+}
+
+.mobileList a {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 18px 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 9vw, 3.25rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.mobileList a:hover {
+  color: var(--accent);
+}
+
+.mobileFooter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 32px;
+}
+
+/* Responsive ------------------------------------------------------------------ */
+
+@media (max-width: 1100px) {
+  .brandRole {
+    display: none;
+  }
+}
+
+@media (max-width: 959px) {
+  .nav {
+    display: none;
+  }
+
+  .menuButton {
+    display: grid;
+  }
+}
+
+@media (max-width: 560px) {
+  .cta {
+    display: none;
+  }
+}
